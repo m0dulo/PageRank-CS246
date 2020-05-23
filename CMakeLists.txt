@@ -8,8 +8,7 @@ else()
 endif()
 include_directories(src/include)
 include_directories(src/3rd_party/Argumenet_helper)
-set(SRCS src/include/dataloader.h
-    src/include/utilis.h
-    src/3rd_party/Argumenet_helper/Argument_helper.h
+include_directories(src/3rd_party/pystring)
+set(SRCS src/3rd_party/pystring/pystring.cpp
     src/main.cpp)
 add_executable(pagerank ${SRCS})

@@ -53,14 +53,16 @@ public:
     std::vector<std::vector<std::string>> res;
     res.clear();
     _in.open(_file_name);
+    size_t cnt = 0;
     LyxUtilis::log("Loading data ...");
     if (!_in) {
-      std::cout << "open file fail!" << std::endl;
+      LyxUtilis::log("open file fail!");
     } else {
       std::vector<std::string> tokens;
       std::string line;
       std::unordered_map<string, bool> deduplicateMap;
       while (std::getline(_in, line)) {
+        cnt++;
         if (deduplicateMap.find(line) == deduplicateMap.end()) {
           trim(line);
           // replaceAll(line, ",", "");
@@ -71,6 +73,7 @@ public:
       }
     }
     _in.close();
+    LyxUtilis::log("Raw Data Size: ", cnt);
     return res;
   }
 

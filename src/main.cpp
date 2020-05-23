@@ -15,6 +15,6 @@ int main(int argc, char *argv[]) {
   ah.process(argc, argv);
   Dataloader loader = Dataloader(dataFile);
   auto dataBuffer = loader.loadData();
-  LyxUtilis::log("data size:", dataBuffer.size());
+  LyxUtilis::log("The Size of Data after Deduplicating: ", dataBuffer.size());
   return 0;
 }
