@@ -1,13 +1,12 @@
 #ifndef PAGERANK_DATALOADER_H
 #define PAGERANK_DATALOADER_H
 
+#include "utilis.h"
 #include <algorithm>
 #include <fstream>
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include "utilis.h"
-
 
 class Dataloader {
 private:

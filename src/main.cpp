@@ -1,5 +1,6 @@
 #include "Argument_helper.h"
 #include "dataloader.h"
+#include "pagerank.h"
 #include <cstdlib>
 #include <ctime>
 #include <list>
@@ -16,5 +17,7 @@ int main(int argc, char *argv[]) {
   Dataloader loader = Dataloader(dataFile);
   auto dataBuffer = loader.loadData();
   LyxUtilis::log("The Size of Data after Deduplicating: ", dataBuffer.size());
+  PageRank p;
+  p.compute(dataBuffer);
   return 0;
 }
